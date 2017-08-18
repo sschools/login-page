@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <meta charset="utf-8">
+
+  </head>
+  <body>
+    <header id="header">
+      <h1>Log In To This Great Site</h1>
+    </header>
+    <main>
+      {{^user}}
+      <h3>You are not logged in.</h3>
+      {{/user}}
+      <h3>Please Enter Username and Password Below</h3>
+      <h4>If you are not registered, click sign up below</h4>
+      <form action="/login" method="POST">
+        <input name="id" type="text" placeholder="Username" required/>
+        <input name="password" type="password" placeholder="Password" required/>
+        <button name="loginButton" type="submit">Log Me In!</button>
+      </form>
+      <br>
+      <h4><a href="/signup">Click here to sign up.</a></h4>
+
+    </main>
+
+  </body>
+</html>
