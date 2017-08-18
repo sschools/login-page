@@ -22,8 +22,12 @@ app.use(session({
 let users = [];
 
 app.get("/", function(request, respond) {
-  respond.redirect("/login");
+  respond.redirect("/home");
 });
+
+app.get("/home", function(request, respond) {
+  respond.render("home");
+})
 
 app.get("/login", function(request, respond) {
   let user = request.session.user;
@@ -31,7 +35,13 @@ app.get("/login", function(request, respond) {
 });
 
 app.post("/login", function(request, respond) {
-  respond.redirect("/");
+  users.filter(function(user){
+    if(user.id === request.body.id && user.password === request.body.password){
+      request.session.user = user;
+      respond.redirect("/behindCurtain");
+    }
+  });
+  respond.render("login", {message: "Either your username or password is incorrect."});
 });
 
 app.get("/signup", function(request, respond) {
@@ -40,19 +50,25 @@ app.get("/signup", function(request, respond) {
 
 app.post("/signup", function(request, respond) {
   users.filter(function(user){
-    if(user.id === req.body.id){
-      respond.render('signup', {message: "User Already Exists! Login or choose another user id"});
+    if(user.id === request.body.id){
+      respond.render("signup", {message: "User Already Exists"});
     }
   });
   let newUser = {id: request.body.id, password: request.body.password};
   users.push(newUser);
   request.session.user = newUser;
-  console.log(users);
   respond.redirect("/behindCurtain");
 });
 
 app.get("/behindCurtain", function(request, respond) {
   respond.render("behindCurtain", {user: request.session.user});
+});
+
+app.post("/behindCurtain", function(request, respond) {
+  request.session.destroy(function(){
+
+  });
+  respond.redirect("/home");
 });
 
 app.listen(3000, function () {
