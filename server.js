@@ -52,8 +52,8 @@ app.post("/signup", function(request, respond) {
 });
 
 app.get("/behindCurtain", function(request, respond) {
-  respond.render("behindCurtain");
-})
+  respond.render("behindCurtain", {user: request.session.user});
+});
 
 app.listen(3000, function () {
   console.log("Begin Login Page App");
