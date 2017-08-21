@@ -3,10 +3,10 @@
   <head>
     <title>Login Page</title>
     <meta charset="utf-8">
-
+    <link rel="stylesheet" href="/styles.css">
   </head>
-  <body>
-    <header id="header">
+  <body class="login-body">
+    <header>
       <h1>Log In To This Great Site</h1>
     </header>
     <main>
@@ -14,7 +14,9 @@
       <h3>You are not logged in.</h3>
       {{/user}}
       {{#message}}
-      <alert>{{message}}</alert>
+      <div class="alert">
+      <h3>{{message}}</h3>
+    </div>
       {{/message}}
       <h3>Please Enter Username and Password Below</h3>
       <h4>If you are not registered, click sign up below</h4>

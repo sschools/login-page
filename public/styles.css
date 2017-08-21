@@ -1,0 +1,76 @@
+.home-body {
+  background-color: #2d2dce;
+  font-family: sans-serif;
+}
+
+.alert {
+  background-color: #ff0000;
+  color: #ffffff;
+  padding: 10px;
+}
+
+.home-body h1, .home-body h3 {
+  color: #fcf949;
+}
+
+.home-body a, .home-body h4 {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: #d60000;
+}
+
+.home-body a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.signup-body {
+  background-color: #ffffc6;
+}
+
+input {
+  width: 200px;
+  height: 30px;
+}
+
+button {
+  width: 100px;
+  height: 30px;
+  background-color: #1b09e5;
+  color: #ffffff;
+  border: 0;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #ffffff;
+  color: #1b09e5;
+  border: 1px solid #1b09e5;
+}
+
+.signup-body h1, .signup-body h3 {
+  font-family: sans-serif;
+  color: #1b09e5;
+}
+
+.behindCurtain-body {
+  font-family: sans-serif;
+  background-color: #94fcf7
+}
+
+.login-body {
+  font-family: sans-serif;
+}
+
+.login-body h1, .login-body h3 {
+  color: #1b09e5;
+}
+
+.login-body a {
+  color: #d13232;
+  text-decoration: none;
+}
+
+.login-body a:hover {
+  color: #1b09e5;
+}
